@@ -1,0 +1,14 @@
+[Unit]
+Description=Perform system userland setup
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/system-init
+Restart=on-failure
+RestartSec=30
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target

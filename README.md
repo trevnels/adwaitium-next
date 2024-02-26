@@ -1,8 +1,11 @@
-# BlueBuild Template &nbsp; [![build-ublue](https://github.com/blue-build/template/actions/workflows/build.yml/badge.svg)](https://github.com/blue-build/template/actions/workflows/build.yml)
+# adwaitium &nbsp; [![build-ublue](https://github.com/trevnels/adwaitium/actions/workflows/build.yml/badge.svg)](https://github.com/trevnels/adwaitium/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
-
-After setup, it is recommended you update this README to describe your custom image.
+This is a *very* work-in-progress Fedora image based on the Universal Blue startingpoint repo. It will eventually have some of my opinionated changes that I make to all of my GNOME installations, namely:
+- Consistent libadwaita theming between GTK4, GTK3, and Qt applications, even within flatpaks
+- A means of automatically updating and applying [firefox-gnome-theme](https://github.com/rafaelmardojai/firefox-gnome-theme) and [thunderbird-gnome-theme](https://github.com/rafaelmardojai/thunderbird-gnome-theme)
+- A few extensions to make GNOME feel a little more 'complete,' such as a dock, a battery duration indicator in the control center, and rounded window corners across all apps (once the extension is compatible with GNOME 45)
+- Various packages I use, such as `git-credential-libsecret` and `gvfs-nfs`
+- JetBrains Mono Nerd Font, my terminal font of choice
 
 ## Installation
 

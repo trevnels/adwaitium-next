@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+# Based on https://github.com/ublue-os/bazzite/blob/unstable/system_files/desktop/shared/usr/bin/bazzite-flatpak-manager
+
+# Fix cursors in electron apps
+flatpak override \
+  --system \
+  --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons \
+  --env=XCURSOR_SIZE=24
+
+# Change firefox config to enable wayland and xinput2
+flatpak override \
+  --system \
+  --env=MOZ_ENABLE_WAYLAND=1 \
+  --env=MOZ_USE_XINPUT2=1 \
+  org.mozilla.firefox
+
+# Params needed for HW accelerated video on Nvidia (Ignoring hybrid systems)
+if [ $(grep -o "\-display" <<< $(lshw -C display) | wc -l) -le 1 ] && grep -q "vendor: NVIDIA Corporation" <<< $(lshw -C display); then
+  flatpak override \
+    --system \
+    --filesystem=host-os \
+    --env=LIBVA_DRIVER_NAME=nvidia \
+    --env=LIBVA_DRIVERS_PATH=/run/host/usr/lib64/dri \
+    --env=LIBVA_MESSAGING_LEVEL=1 \
+    --env=MOZ_DISABLE_RDD_SANDBOX=1 \
+    --env=NVD_BACKEND=direct \
+    org.mozilla.firefox
+fi
+
+mkdir -p /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/stable/defaults/pref
+rm -f /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/stable/defaults/pref/*-adwaitium.js
+/usr/bin/cp -rf /usr/share/ublue-os/firefox-config/* /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/x86_64/stable/defaults/pref/

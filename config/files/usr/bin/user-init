@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+mkdir -p $HOME/.bashrc.d
+echo "eval \"\$(starship init bash)\"" > $HOME/.bashrc.d/starship.sh

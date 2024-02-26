@@ -1,0 +1,14 @@
+[Unit]
+Description=Perform per-user userland setup
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/user-init
+Restart=on-failure
+RestartSec=30
+StartLimitInterval=0
+
+[Install]
+WantedBy=default.target
