@@ -47,5 +47,5 @@ download-updates-notify=false
 [com/github/stunkymonkey/nautilus-open-any-terminal]
 terminal = 'ptyxis'
 keybindings = ''
-new-tab = false
-flatpak = 'system'
+new-tab = true
+flatpak = 'user'
