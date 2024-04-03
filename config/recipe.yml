@@ -62,11 +62,11 @@ modules:
         - org.gnome.Ptyxis.Devel
       remove:
 
-  - type: script # enable VRR
+  - type: script
     scripts:
       # - enable-vrr.sh
       # - install-prompt.sh
-      - ext-rounded-window-corners.sh
+      # - ext-rounded-window-corners.sh
       
   - type: bling # configure what to pull in from ublue-os/bling
     install:
