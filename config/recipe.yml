@@ -4,7 +4,7 @@ name: adwaitium
 description: My opinionated Universal Blue image, based on silverblue-nvidia
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-nvidia
+base-image: ghcr.io/ublue-os/kinoite-nvidia
 image-version: 40 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -31,16 +31,16 @@ modules:
     install:
       - f37-backgrounds-gnome
       - git-credential-libsecret
-      - gnome-shell-extension-tailscale-gnome-qs
-      - gvfs-nfs
-      - nautilus-open-any-terminal
+      # - gnome-shell-extension-tailscale-gnome-qs
+      # - gvfs-nfs
+      # - nautilus-open-any-terminal
       - papirus-icon-theme
       - tailscale
       - starship
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
-      - gnome-terminal-nautilus
+      # - gnome-terminal-nautilus
       
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
@@ -59,7 +59,7 @@ modules:
       repo-name: gnome-nightly
       repo-title: "GNOME Nightly" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
-        - org.gnome.Ptyxis.Devel
+        # - org.gnome.Ptyxis.Devel
       remove:
 
   - type: script
