@@ -33,7 +33,9 @@ modules:
       - git-credential-libsecret
       - gnome-shell-extension-tailscale-gnome-qs
       - gvfs-nfs
+      - lm_sensors
       - nautilus-open-any-terminal
+      - openrgb
       - papirus-icon-theme
       - tailscale
       - starship
