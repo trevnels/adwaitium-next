@@ -35,7 +35,6 @@ modules:
       - gvfs-nfs
       - lm_sensors
       - nautilus-open-any-terminal
-      - openrgb
       - papirus-icon-theme
       - tailscale
       - starship
