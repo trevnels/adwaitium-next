@@ -45,7 +45,7 @@ download-updates=false
 download-updates-notify=false
 
 [com/github/stunkymonkey/nautilus-open-any-terminal]
-terminal = 'ptyxis-nightly'
+terminal = 'ptyxis'
 keybindings = ''
 new-tab = true
-flatpak = 'user'
+flatpak = 'system'
