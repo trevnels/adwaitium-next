@@ -52,17 +52,10 @@ modules:
       repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
         - org.mozilla.firefox
+        - app.devsuite.Ptyxis
       remove:
       # - org.gnome.eog
-    user:
-      # If no repo information is specified, Flathub will be used by default
-      repo-url: https://nightly.gnome.org/gnome-nightly.flatpakrepo
-      repo-name: gnome-nightly
-      repo-title: "GNOME Nightly" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
-      install:
-        - org.gnome.Ptyxis.Devel
-      remove:
-
+ 
   - type: script
     scripts:
       # - enable-vrr.sh
